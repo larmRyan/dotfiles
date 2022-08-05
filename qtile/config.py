@@ -4,15 +4,6 @@ from modules.groups import groups
 from modules.screens import screens
 import modules.hooks
 
-"""
-TODO:
-
-- Look into adding another layout
-- Add keybindings for changing main stack sizes in monad tall/wide
-- Add keybindings for sup + shift + > for moving windows to other screen
-- Add keybindings for resizing master space in xmonad layouts
-"""
-
 assert keys
 assert mouse
 assert floating_layout
