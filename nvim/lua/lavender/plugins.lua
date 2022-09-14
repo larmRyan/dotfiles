@@ -1,3 +1,6 @@
+
+-- Auto install packer if it's not already installed
+-- For new installs
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -60,6 +63,15 @@ return require('packer').startup(function(use)
     end,
   })
 
+  use ({
+    'nvim-telescope/telescope.nvim',
+    -- opt = true,
+    cmd = 'Telescope',
+    config = function()
+      require('lavender.plugins.telescope')
+    end,
+  })
+
   -- Color schemes
   use ({
     'catppuccin/nvim',
@@ -105,20 +117,21 @@ return require('packer').startup(function(use)
     end,
   })
 
-  -- LSP
   use ({
-    {
-      'williamboman/mason.nvim',
-    },
-    {
-      'williamboman/mason-lspconfig.nvim',
-    },
-    {
-      'neovim/nvim-lspconfig',
-      config = function()
-        require('lavender.plugins.lsp')
-      end,
-    }
+    'neovim/nvim-lspconfig',
+  })
+
+  use ({
+    'williamboman/mason-lspconfig.nvim',
+    after = 'nvim-lspconfig',
+  })
+
+  use ({
+    'williamboman/mason.nvim',
+    after = 'mason-lspconfig.nvim',
+    config = function()
+      require('lavender.plugins.lsp')
+    end,
   })
 
   use ({
