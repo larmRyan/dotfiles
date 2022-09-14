@@ -16,7 +16,6 @@ return require('packer').startup(function(use)
   -- Package manager
   use ({ 'wbthomason/packer.nvim' })
 
-
   -- Requirements
   use ({
     'kyazdani42/nvim-web-devicons',
@@ -24,8 +23,6 @@ return require('packer').startup(function(use)
       require('nvim-web-devicons').setup({ default = true, })
     end,
   })
-
-
 
   -- Misc.
   use ({
@@ -71,7 +68,6 @@ return require('packer').startup(function(use)
       require('lavender.plugins.catppuccin')
     end,
   })
-  -- use ({ 'rose-pine/neovim', as = 'rose-pine' })
 
   -- Tab/Status lines
   use ({
@@ -88,7 +84,6 @@ return require('packer').startup(function(use)
       require('lavender.plugins.lualine')
     end,
   })
-
 
   -- Syntax Highlighting
   use ({
@@ -109,7 +104,6 @@ return require('packer').startup(function(use)
       require('lavender.plugins.nvim-tree')
     end,
   })
-
 
   -- LSP
   use ({
