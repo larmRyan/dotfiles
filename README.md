@@ -28,6 +28,7 @@
   - [ ] Add key bindings to change window sizes
   - [ ] Add key bindings to move windows to other screen
   - [ ] Update script locations
+  - [ ] Fix bar volume display (not showing headphone volume when first sink was speaker)
+  - [ ] Create widget to toggle between headphones and speakers
 - Future stuff (Making everything more dynamic / auto configuring)
   - [ ] Query system for number of screens and dynamically create that number of screens in Qtile
-  - [ ] 
