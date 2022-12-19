@@ -1,1 +1,0 @@
-from modules.color_schemes.levuaska import color_scheme as theme
