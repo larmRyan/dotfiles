@@ -1,0 +1,39 @@
+- clean: ['~']
+
+- link:
+    ~/.config/awesome
+        force: true
+        create: true
+        path: awesome/
+    ~/.config/alacritty
+        force: true
+        create: true
+        path: alacritty/
+    ~/.config/mpd
+        force: true
+        create: true
+        path: mpd/
+    ~/.config/ncmpcpp
+        force: true
+        create: true
+        path: ncmpcpp/
+    ~/.config/picom
+        force: true
+        create: true
+        path: picom/
+    ~/.config/scripts
+        force: true
+        create: true
+        path: scripts/
+    ~/.bashrc
+        force: true
+        create: true
+        path: shell.d/bashrc
+    ~/.gitconfig
+        force: true
+        create: true
+        path: git/gitconfig
+    ~/.gitignore
+        force: true
+        create: true
+        path: git/gitignore
