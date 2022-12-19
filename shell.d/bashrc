@@ -22,7 +22,7 @@ alias mldis="mullvad disconnect"
 alias ls="lsd"
 alias lah="lsd -lah"
 
-## Useful functions
+## Useful functions ##
 # Thanks to DT: https://gitlab.com/dwt1/dotfiles/-/blob/master/.bashrc
 # navigation
 up () {
@@ -43,6 +43,9 @@ up () {
     echo "Couldn't go up $limit dirs.";
   fi
 }
+
+## Start MPD ##
+[ ! -s ~/.config/mpd/pid ] && mpd
 
 ## Enable starship prompt ##
 eval "$(starship init bash)"
