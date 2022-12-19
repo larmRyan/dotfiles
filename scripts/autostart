@@ -1,8 +1,0 @@
-#!/bin/bash
-
-export PATH="$HOME/.config/scripts:$PATH"
-
-[ ! -s ~/.config/mpd/pid ] && mpd
-
-picom -b &
-eww daemon &

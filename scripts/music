@@ -1,0 +1,31 @@
+#!/bin/bash
+
+usage() {
+    printf "Play/pause, skip and go back to previous audio tracks with playerctl\n\n"
+    printf "Usage: music [ next | previous | play-pause | help ]\n"
+}
+
+if [[ $# == 0 ]]; then
+    usage
+    return 1
+fi
+
+# Thanks to:
+# https://stackoverflow.com/questions/32801791/how-can-i-determine-if-a-binary-is-installed-using-bash
+if [[ -z $(which playerctl 2>/dev/null) ]]; then
+    printf "Please install playerctl\n"
+    return 1
+fi
+
+while [[ $# > 0 ]]
+do
+    case "$1" in
+        next|previous|play-pause)
+            playerctl --player=mpd,spotify,firefox,%any $1
+            ;;
+        help|*)
+            usage
+            ;;
+    esac
+    shift
+done

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ -z $(which pactl 2>/dev/null) ]]; then
+    printf "Please install pactl\n"
+    return 1
+fi
+
+default_sink="$(pactl get-default-sink)"
+
+if [[ "$default_sink" == "$USER_HEADPHONES" ]]; then
+    pactl set-default-sink "$USER_SPEAKERS"
+else
+    pactl set-default-sink "$USER_HEADPHONES"
+fi

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+usage() {
+    printf "Take full screen and select area screenshots\n\n"
+    printf "Usage: screenshot [ full | area | help ]\n"
+}
+
+if [[ $# == 0 ]]; then
+    usage
+    return 1
+fi
+
+if [[ -z $(which maim 2>/dev/null) ]]; then
+    printf "Please install maim\n"
+    return 1
+fi
+
+while [[ $# > 0 ]]
+do
+    case "$1" in
+        full)
+            maim -u ~/pictures/screenshots/$(date +%s).png
+            ;;
+        area)
+            maim -u -s ~/pictures/screenshots/$(date +%s).png
+            ;;
+        help|*)
+            usage
+            ;;
+    esac
+    shift
+done
