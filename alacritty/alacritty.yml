@@ -1,22 +1,20 @@
-
 import:
-   - ~/.config/alacritty/themes/catppuccin.yml
+    - ~/.config/alacritty/catppuccin.yml
 window:
-  padding:
-    x: 25
-    y: 25
+    padding:
+        x: 25
+        y: 25
 font:
-  normal:
-    family: Victor Mono
-    style: Medium
-  bold:
-    family: Victor Mono
-    style: Bold
-  bold_italic:
-    family: Victor Mono
-    style: Bold Italic
-  italic:
-    family: Victor Mono
-    style: SemiBold Italic
-  size: 11.0
-   
+    normal:
+        family: JetBrains Mono NF
+        style: Medium
+    bold:
+        family: JetBrains Mono NF
+        style: Bold
+    bold_italic:
+        family: JetBrains Mono NF
+        style: Bold Italic
+    italic:
+        family: JetBrains Mono NF
+        style: SemiBold Italic
+    size: 11.0
