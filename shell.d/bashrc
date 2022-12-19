@@ -1,0 +1,44 @@
+## Environment variables ##
+export USER_HEADPHONES="alsa_output.usb-Kingston_HyperX_7.1_Audio_00000000-00.analog-stereo"
+export USER_SPEAKERS="alsa_output.pci-0000_00_1f.3.analog-stereo"
+
+# Reference: https://github.com/elFarto/nvidia-vaapi-driver/#configuration
+export LIBVA_DRIVER_NAME=nvidia
+export NVD_BACKEND=direct
+export MOZ_DISABLE_RDD_SANDBOX=1
+
+## Aliases ##
+alias mlstat="mullvad status"
+alias mlcon="mullvad connect"
+alias mldis="mullvad disconnect"
+
+alias ls="lsd"
+alias lah="lsd -lah"
+
+## Useful functions
+# Thanks to DT: https://gitlab.com/dwt1/dotfiles/-/blob/master/.bashrc
+# navigation
+up () {
+  local d=""
+  local limit="$1"
+
+  # Default to limit of 1
+  if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
+    limit=1
+  fi
+
+  for ((i=1;i<=limit;i++)); do
+    d="../$d"
+  done
+
+  # perform cd. Show error if cd fails
+  if ! cd "$d"; then
+    echo "Couldn't go up $limit dirs.";
+  fi
+}
+
+## Enable starship prompt ##
+eval "$(starship init bash)"
+
+## Start ssh-agent for github ##
+eval "$(ssh-agent -s)"
